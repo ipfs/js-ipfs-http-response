@@ -46,8 +46,8 @@
     "aegir": "^13.1.0",
     "chai": "^4.1.2",
     "dirty-chai": "^2.0.1",
-    "ipfs": "^0.28.2",
-    "ipfsd-ctl": "^0.36.0"
+    "ipfs": "https://github.com/ipfs/js-ipfs/tarball/eb1b3b34cb3f53bcaa65818327545a03d49e01fc/js-ipfs.tar.gz",
+    "ipfsd-ctl": "^0.39.1"
   },
   "contributors": [
     "André Cruz <andremiguelcruz@msn.com>",
