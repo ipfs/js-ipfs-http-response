@@ -46,7 +46,7 @@
     "aegir": "^13.1.0",
     "chai": "^4.1.2",
     "dirty-chai": "^2.0.1",
-    "ipfs": "https://github.com/ipfs/js-ipfs/tarball/eb1b3b34cb3f53bcaa65818327545a03d49e01fc/js-ipfs.tar.gz",
+    "ipfs": "^0.32.0",
     "ipfsd-ctl": "^0.39.1"
   },
   "contributors": [
