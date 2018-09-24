@@ -16,7 +16,6 @@ const { getResponse } = require('../src')
 const makeWebResponseEnv = require('./utils/web-response-env')
 
 const df = DaemonFactory.create({ type: 'proc', exec: ipfs })
-// const cidv1b32 = (cid) => new CID(cid).toBaseEncodedString('base32')
 
 describe('resolve file (CIDv0)', function () {
   let ipfs = null
@@ -83,7 +82,6 @@ describe('resolve file (CIDv1)', function () {
       ipfs.files.add(file.data, {cidVersion: 1}, (err, filesAdded) => {
         expect(err).to.not.exist()
         expect(filesAdded).to.have.length(1)
-        // console.log('CIDv1', filesAdded)
         const retrievedFile = filesAdded[0]
         expect(new CID(retrievedFile.hash)).to.deep.equal(new CID(file.cid))
         // expect(retrievedFile.size, 'ipfs.files.add result size should not be smaller than input buffer').greaterThan(file.data.length)
@@ -140,7 +138,6 @@ describe('resolve directory (CIDv0)', function () {
       ipfs.files.add(dirs, {cidVersion: 0}, (err, res) => {
         expect(err).to.not.exist()
         const root = res[res.length - 1]
-        // console.log('root CIDv0', res)
 
         expect(root.path).to.equal('test-folder')
         expect(new CID(root.hash)).to.deep.equal(new CID(directory.cid))
@@ -213,7 +210,6 @@ describe('resolve directory (CIDv1)', function () {
       ipfs.files.add(dirs, {cidVersion: 1}, (err, res) => {
         expect(err).to.not.exist()
         const root = res[res.length - 1]
-        // console.log('root CIDv1', res)
         expect(root.path).to.equal('test-folder')
         // expect(res[0].size, 'ipfs.files.add 1st result size should not be smaller than 1st input buffer').greaterThan(dirs[0].content.length)
         // expect(res[1].size, 'ipfs.files.add 2nd result size should not be smaller than 2nd input buffer').greaterThan(dirs[1].content.length)
@@ -337,7 +333,6 @@ describe('resolve web page (CIDv1)', function () {
       ipfs.files.add(dirs, {cidVersion: 1}, (err, res) => {
         expect(err).to.not.exist()
         const root = res[res.length - 1]
-        // console.log('ipfs.files.add result', res)
         expect(root.path).to.equal('test-site')
         expect(new CID(root.hash)).to.deep.equal(new CID(webpage.cid))
         done()
