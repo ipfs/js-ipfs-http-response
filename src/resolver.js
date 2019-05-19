@@ -80,7 +80,7 @@ const cid = promisify((ipfs, path, callback) => {
         const nextFileName = item
 
         try {
-          for (let link of dagNode.links) {
+          for (let link of dagNode.Links) {
             if (link.name === nextFileName) {
               // found multihash/cid of requested named-file
               try {
@@ -129,7 +129,7 @@ const cid = promisify((ipfs, path, callback) => {
         }
 
         try {
-          let dagDataObj = Unixfs.unmarshal(dagResult.value.data)
+          let dagDataObj = Unixfs.unmarshal(dagResult.value.Data)
           // There are at least two types of directories:
           // - "directory"
           // - "hamt-sharded-directory" (example: QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX)
