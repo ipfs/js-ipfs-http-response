@@ -19,13 +19,13 @@ function getIndexFiles (links) {
     'index.shtml'
   ]
   // directory
-  let indexes = links.filter((link) => INDEX_HTML_FILES.indexOf(link.name) !== -1)
+  let indexes = links.filter((link) => INDEX_HTML_FILES.indexOf(link.Name) !== -1)
   if (indexes.length) {
     return indexes
   }
   // hamt-sharded-directory uses a 2 char prefix
   return links.filter((link) => {
-    return link.name.length > 2 && INDEX_HTML_FILES.indexOf(link.name.substring(2)) !== -1
+    return link.Name.length > 2 && INDEX_HTML_FILES.indexOf(link.Name.substring(2)) !== -1
   })
 }
 
@@ -38,13 +38,13 @@ const directory = promisify((ipfs, path, cid, callback) => {
     }
 
     // Test if it is a Website
-    const indexFiles = getIndexFiles(dagNode.links)
+    const indexFiles = getIndexFiles(dagNode.Links)
 
     if (indexFiles.length) {
       return callback(null, indexFiles)
     }
 
-    return callback(null, dirView.render(path, dagNode.links))
+    return callback(null, dirView.render(path, dagNode.Links))
   })
 })
 
@@ -81,16 +81,8 @@ const cid = promisify((ipfs, path, callback) => {
 
         try {
           for (let link of dagNode.Links) {
-            if (link.name === nextFileName) {
-              // found multihash/cid of requested named-file
-              try {
-                // assume a Buffer with a valid CID
-                // (cid is allowed instead of multihash since https://github.com/ipld/js-ipld-dag-pb/pull/80)
-                cidOfNextFile = new CID(link.cid)
-              } catch (err) {
-                // fallback to multihash
-                cidOfNextFile = new CID(mh.toB58String(link.multihash))
-              }
+            if (link.Name === nextFileName) {
+              cidOfNextFile = link.Hash
               break
             }
           }
