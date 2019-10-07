@@ -6,7 +6,7 @@ const debug = require('debug')
 const log = debug('jsipfs:http:response:resolver')
 log.error = debug('jsipfs:http:response:resolver:error')
 const dirView = require('./dir-view')
-const pTryEeach = require('./utils/p-try-each')
+const pTryEach = require('./utils/p-try-each')
 
 const INDEX_HTML_FILES = [
   'index.html',
@@ -15,7 +15,7 @@ const INDEX_HTML_FILES = [
 ]
 
 const findIndexFile = (ipfs, path) => {
-  return pTryEeach(INDEX_HTML_FILES.map(file => {
+  return pTryEach(INDEX_HTML_FILES.map(file => {
     return async () => {
       const stats = await ipfs.files.stat(`${path}/${file}`)
 
@@ -28,6 +28,7 @@ const findIndexFile = (ipfs, path) => {
 }
 
 const directory = async (ipfs, path, cid) => {
+  // Test if it is a Website
   try {
     const res = await findIndexFile(ipfs, path)
 

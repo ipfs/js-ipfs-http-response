@@ -1,6 +1,6 @@
 'use strict'
 
-const pTryEeach = async (iterable) => {
+const pTryEach = async (iterable) => {
   let error
 
   for (const element of iterable) {
@@ -22,4 +22,4 @@ const pTryEeach = async (iterable) => {
   throw error
 }
 
-module.exports = pTryEeach
+module.exports = pTryEach
