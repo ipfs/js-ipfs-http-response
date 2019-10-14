@@ -1,12 +1,12 @@
 'use strict'
 
+const pTryEach = require('p-try-each')
 const mh = require('multihashes')
 const CID = require('cids')
 const debug = require('debug')
 const log = debug('jsipfs:http:response:resolver')
 log.error = debug('jsipfs:http:response:resolver:error')
 const dirView = require('./dir-view')
-const pTryEach = require('./utils/p-try-each')
 
 const INDEX_HTML_FILES = [
   'index.html',
