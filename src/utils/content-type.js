@@ -18,16 +18,16 @@ const detectContentType = async (path, source) => {
 
       fileSignature = fileType(value.slice())
 
-      source = (async function * () {
+      source = (async function * () { // eslint-disable-line require-await
         yield value
         yield * reader
       })()
     } catch (err) {
       if (err.code !== 'ERR_UNDER_READ') throw err
 
-      // Not enough bytes for sniffing, just yield the data
-      source = (async function * () {
-        yield err.buffer
+      // not enough bytes for sniffing, just yield the data
+      source = (async function * () { // eslint-disable-line require-await
+        yield err.buffer // these are the bytes that were read (if any)
       })()
     }
   }
