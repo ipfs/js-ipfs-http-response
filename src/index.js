@@ -4,6 +4,7 @@
 
 const toStream = require('it-to-stream')
 const concat = require('it-concat')
+const toBuffer = require('it-buffer')
 const log = require('debug')('ipfs:http:response')
 
 const resolver = require('./resolver')
@@ -59,11 +60,7 @@ const getResponse = async (ipfsNode, ipfsPath) => {
     const { source, contentType } = await detectContentType(ipfsPath, ipfsNode.cat(resolvedData.cid))
 
     if (typeof Blob === 'undefined') {
-      const responseStream = toStream.readable((async function * () {
-        for await (const chunk of source) {
-          yield chunk.slice() // Convert BufferList to Buffer
-        }
-      })())
+      const responseStream = toStream.readable(toBuffer(source))
 
       return contentType
         ? new Response(responseStream, getHeader(200, 'OK', { 'Content-Type': contentType }))
