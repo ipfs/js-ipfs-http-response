@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/ipfs/js-ipfs-http-response#readme",
   "dependencies": {
-    "cids": "~0.7.1",
+    "cids": "~0.8.3",
     "debug": "^4.1.1",
     "file-type": "^8.0.0",
     "filesize": "^3.6.1",
