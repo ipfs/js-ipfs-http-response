@@ -35,7 +35,7 @@
     "cids": "~0.8.1",
     "debug": "^4.1.1",
     "file-type": "^8.0.0",
-    "filesize": "^3.6.1",
+    "filesize": "^6.1.0",
     "it-buffer": "^0.1.1",
     "it-concat": "^1.0.0",
     "it-reader": "^2.1.0",
