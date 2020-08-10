@@ -34,7 +34,7 @@
   "dependencies": {
     "cids": "~0.8.1",
     "debug": "^4.1.1",
-    "file-type": "^8.0.0",
+    "file-type": "^14.7.1",
     "filesize": "^3.6.1",
     "it-buffer": "^0.1.1",
     "it-concat": "^1.0.0",
