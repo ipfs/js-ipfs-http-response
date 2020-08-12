@@ -45,7 +45,7 @@
     "p-try-each": "^1.0.1"
   },
   "devDependencies": {
-    "aegir": "^22.0.0",
+    "aegir": "^25.1.0",
     "chai": "^4.2.0",
     "dirty-chai": "^2.0.1",
     "get-stream": "^3.0.0",
