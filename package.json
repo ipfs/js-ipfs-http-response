@@ -36,7 +36,7 @@
     "filesize": "^6.1.0",
     "it-buffer": "^0.1.1",
     "it-concat": "^1.0.0",
-    "it-reader": "^2.1.0",
+    "it-reader": "^3.0.0",
     "it-to-stream": "^0.1.1",
     "mime-types": "^2.1.27",
     "multihashes": "^4.0.2",
