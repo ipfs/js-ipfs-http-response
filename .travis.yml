@@ -1,5 +1,11 @@
 language: node_js
 cache: npm
+dist: bionic
+
+branches:
+  only:
+  - master
+  - /^release\/.*$/
 
 stages:
   - check
@@ -13,21 +19,20 @@ node_js:
 os:
   - linux
   - osx
+  - windows
 
-before_install:
-  # modules with pre-built binaries may not have deployed versions for bleeding-edge node so this lets us fall back to building from source
-  - npm install -g node-pre-gyp
-
-script: npx nyc -s npm run test:node -- --bail
+script: npm run test:node -- --cov
 after_success: npx nyc report --reporter=text-lcov > coverage.lcov && npx codecov
 
 jobs:
   include:
+    - os: windows
+      cache: false
+
     - stage: check
       script:
         - npx aegir dep-check
         - npm run lint
-        - npm run build
 
 notifications:
   email: false
