@@ -1,4 +1,4 @@
 # Make sure fixtures have correct line endings on windows
 
-*.txt lf
-*.svg lf
+*.txt text eol=lf
+*.svg text eol=lf
