@@ -1,5 +1,5 @@
 language: node_js
-cache: npm
+cache: false
 dist: bionic
 
 branches:
@@ -27,9 +27,6 @@ after_success: npx nyc report --reporter=text-lcov > coverage.lcov && npx codeco
 
 jobs:
   include:
-    - os: windows
-      cache: false
-
     - stage: check
       script:
         - npx aegir dep-check
