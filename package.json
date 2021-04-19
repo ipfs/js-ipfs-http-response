@@ -47,7 +47,7 @@
     "cids": "^1.0.0",
     "get-stream": "^6.0.0",
     "ipfs": "^0.54.2",
-    "ipfsd-ctl": "^7.0.0",
+    "ipfsd-ctl": "^8.0.2",
     "it-all": "^1.0.1",
     "path": "^0.12.7",
     "uint8arrays": "^2.0.5",
