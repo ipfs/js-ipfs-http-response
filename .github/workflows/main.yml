@@ -29,7 +29,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install -g @mapbox/node-pre-gyp
       - run: npm install
       - run: npx aegir test -t node --cov --bail
       - uses: codecov/codecov-action@v1
