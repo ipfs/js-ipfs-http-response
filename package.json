@@ -33,7 +33,7 @@
   "dependencies": {
     "debug": "^4.3.1",
     "file-type": "^16.0.0",
-    "filesize": "^6.1.0",
+    "filesize": "^7.0.0",
     "it-buffer": "^0.1.1",
     "it-concat": "^2.0.0",
     "it-reader": "^3.0.0",
@@ -46,7 +46,7 @@
     "aegir": "^34.0.2",
     "get-stream": "^6.0.0",
     "ipfs-core": "^0.9.1",
-    "ipfsd-ctl": "^8.0.2",
+    "ipfsd-ctl": "^10.0.1",
     "it-all": "^1.0.5",
     "path": "^0.12.7",
     "uint8arrays": "^2.0.5",
