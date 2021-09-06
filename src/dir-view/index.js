@@ -1,5 +1,5 @@
 import filesize from 'filesize'
-import mainStyle from './style.js'
+import style from './style.js'
 import { cidArray } from '../utils/path.js'
 import ejs from 'ejs'
 
@@ -25,7 +25,7 @@ export function render (path, links) {
 <head>
   <meta charset="utf-8">
   <title><%= path %></title>
-  <style><%= mainStyle %></style>
+  <style>${style}</style>
 </head>
 <body>
   <div id="header" class="row">
@@ -66,7 +66,6 @@ export function render (path, links) {
 </html>
 `, {
     path,
-    mainStyle,
     links: links.map((link) => ({
       name: link.Name,
       size: filesize(link.Tsize),
