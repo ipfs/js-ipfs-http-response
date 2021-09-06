@@ -65,13 +65,13 @@ export function render (path, links) {
 </body>
 </html>
 `, {
-  path,
-  mainStyle,
-  links: links.map((link) => ({
-    name: link.Name,
-    size: filesize(link.Tsize),
-    link: `${path}${path.endsWith('/') ? '' : '/'}${link.Name}`
-  })),
-  parentHref: getParentHref(path),
-})
+    path,
+    mainStyle,
+    links: links.map((link) => ({
+      name: link.Name,
+      size: filesize(link.Tsize),
+      link: `${path}${path.endsWith('/') ? '' : '/'}${link.Name}`
+    })),
+    parentHref: getParentHref(path)
+  })
 }
