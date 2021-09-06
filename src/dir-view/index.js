@@ -37,7 +37,7 @@ export function render (path, links) {
   <div class="col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <strong>Index of <%= it.path %></strong>
+        <strong>Index of <%= path %></strong>
       </div>
       <table class="table table-striped">
         <tbody>
