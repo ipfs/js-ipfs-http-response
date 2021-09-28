@@ -1,3 +1,6 @@
+⛔️ DEPRECATED
+js-ipfs-http-response repository is now deprecated in IPFS org, given it is now part of the [js-ipfs monorepo packages](https://github.com/ipfs/js-ipfs/tree/master/packages).
+
 # js-ipfs-http-response
 
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://protocol.ai)
